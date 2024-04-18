@@ -12,6 +12,7 @@ jobs:
       matrix:
         provider:
           - digitalocean
+          - cloudflare
     steps:
       -
         name: Checkout
