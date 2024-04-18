@@ -44,6 +44,6 @@ jobs:
           push: true
           build-args: |
             PROVIDER=${{ matrix.provider }}
-          tags: jaredlander/caddy-dns:digitalocean-latest
+          tags: jaredlander/caddy-dns:${{ matrix.provider }}-latest
           cache-from: type=registry,ref=user/app:latest
           cache-to: type=inline
