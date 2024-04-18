@@ -28,7 +28,7 @@ jobs:
           context: .
           push: true
           build-args: |
-            PROVIDER="digitalocean"
+            PROVIDER=digitalocean
           tags: jaredlander/caddy-dns:digitalocean-latest
           cache-from: type=registry,ref=user/app:latest
           cache-to: type=inline
