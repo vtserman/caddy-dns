@@ -13,6 +13,16 @@ jobs:
         provider:
           - digitalocean
           - cloudflare
+          - azure
+          - route53
+          - namecheap
+          - linode
+          - acmedns
+          - godaddy
+          - easydns
+          - duckdns
+          - netlify
+          - googleclouddns
     steps:
       -
         name: Checkout
