@@ -2,7 +2,7 @@ ARG PROVIDER=digitalocean
 FROM caddy:builder-alpine AS builder
 ARG PROVIDER
 
-RUN xcaddy build --with github.com/caddy-dns/${PROVIDER}
+RUN xcaddy build --with github.com/caddy-dns/digitalocean
 
 FROM caddy:latest
 
