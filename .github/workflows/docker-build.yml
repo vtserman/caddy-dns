@@ -6,8 +6,12 @@ on:
       - 'main'
 
 jobs:
-  docker:
+  docker-builder:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        provider:
+          - digitalocean
     steps:
       -
         name: Checkout
@@ -28,7 +32,7 @@ jobs:
           context: .
           push: true
           build-args: |
-            PROVIDER=digitalocean
+            PROVIDER=${{ matrix.provider }}
           tags: jaredlander/caddy-dns:digitalocean-latest
           cache-from: type=registry,ref=user/app:latest
           cache-to: type=inline
