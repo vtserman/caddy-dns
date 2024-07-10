@@ -47,6 +47,21 @@ jobs:
           tags: jaredlander/caddy-dns:${{ matrix.provider }}-latest
           cache-from: type=registry,ref=user/app:latest
           cache-to: type=inline
+  dockerhub-description:
+    name: Copy README to Dockerhub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout for Dockerhub Description
+        uses: actions/checkout@v4
+      - name: Copy README
+        uses: peter-evans/dockerhub-description@v4
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: jaredlander/caddy-dns
+          short-description: Caddy images built with different DNS providers
+          readme-filepath: ./README.md
+          enable-url-completion: true
   keepalive-job:
     name: Keepalive Workflow
     runs-on: ubuntu-latest
