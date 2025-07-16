@@ -24,6 +24,7 @@ docker pull jaredlander/caddy-dns:cloudflare-latest
 - duckdns
 - netlify
 - googleclouddns
+- hetzner
 
 ## Contributing
 

@@ -27,6 +27,7 @@ jobs:
           - duckdns
           - netlify
           - googleclouddns
+          - hetzner
     steps:
       - name: Checkout
         uses: actions/checkout@v4
